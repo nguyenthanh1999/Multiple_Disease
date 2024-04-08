@@ -60,7 +60,7 @@ The second dataset was created to include an additional disease label to prevent
 To start, I use a countplot to visualize the distribution of the label column in the dataset.
 
 <div style="text-align:center; margin-bottom:20px;">
-    <img src="Image/0.Labels_countplot.png" alt="Label countplot">
+    <img src="Images/0.Labels_countplot.png" alt="Label countplot">
 </div>
 
 The countplot of labels clearly illustrates all the label names and the number of instances for each label. From this visualization, we can observe the imbalance in the dataset, with 'Heart Di' and 'Thromboc' labels having significantly fewer instances compared to others.
@@ -70,7 +70,7 @@ To further analyze the effect of each feature on the labels, I combine boxplots 
 For example, in the case of Glucose:
 ---
 <div style="text-align:center; margin-bottom:20px;">
-    <img src="Image\1.Glucose_plot1.png" alt="Glucose plot 1">
+    <img src="Images\1.Glucose_plot1.png" alt="Glucose plot 1">
 </div>
 
 I observed that instances labeled as 'Healthy' typically exhibit Glucose levels ranging from 0.25 to 0.6 mg/dL, with an average of approximately 0.4 mg/dL in this dataset. Similar trends are observed for other labels: 'Diabetes' ranges from 0.35 to 0.75 with an average of 0.5, 'Thalasse' from 0.2 to 0.55 with an average of 0.4, 'Anemia' from 0.1 to 0.4 with an average of 0.2, 'Thromboc' from 0.1 to 0.4 with an average of 0.35, and 'Heart Di' from 0.2 to 0.6 with an average of 0.4.
@@ -80,13 +80,13 @@ From the histogram plot of Glucose for the entire dataset, I observe a gradual d
 For more details about number of instance for each label, I use histplot like below
 
 <div style="text-align:center; margin-bottom:20px;">
-    <img src="Image\1.Glucose_plot2.png" alt="Glucose plot 2">
+    <img src="Images\1.Glucose_plot2.png" alt="Glucose plot 2">
 </div>
 
 Similarly, I apply this approach to analyze the Cholesterol feature.
 ---
 <div style="text-align:center; margin-bottom:20px;">
-    <img src="Image\2.Cholesterol_plot1.png" alt="Cholesterol plot 1">
+    <img src="Images\2.Cholesterol_plot1.png" alt="Cholesterol plot 1">
 </div>
 
 Similar to the Glucose boxplot, the Cholesterol boxplot indicates that for 'Healthy' instances, the distribution of Cholesterol mostly falls within the range of 0.25 to 0.55, with an average exceeding 0.4. For 'Diabetes', the range is from 0.25 to 0.8, with an average of 0.4. 'Thalasse' instances show Cholesterol levels between 0.18 to 0.41, with an average around 0.3. 'Anemia' instances exhibit Cholesterol levels ranging from 0.2 to 0.5, with an average of 0.3. 'Thromboc' instances typically have Cholesterol levels ranging from 0.55 to 0.75, with an average around 0.6, although two special cases are noted at approximately 0.05 and 0.15. Finally, for 'Heart Di' instances, Cholesterol levels range from 0.3 to 0.65, with an average of about 0.5.
@@ -96,13 +96,13 @@ Based on the Cholesterol histplot for the entire dataset, I observe that the maj
 For further details of instance distribution, I'll show as below
 
 <div style="text-align:center; margin-bottom:20px;">
-    <img src="Image\2.Cholesterol_plot2.png" alt="Cholesterol plot 2">
+    <img src="Images\2.Cholesterol_plot2.png" alt="Cholesterol plot 2">
 </div>
 
 As for the Hemoglobin feature
 ---
 <div style="text-align:center; margin-bottom:20px;">
-    <img src="Image\3.Hemoglobin_plot1.png" alt="Hemoglobin plot 1">
+    <img src="Images\3.Hemoglobin_plot1.png" alt="Hemoglobin plot 1">
 </div>
 
 From the Hemoglobin Boxplot, it's evident that the distribution varies across different labels: 'Healthy' instances predominantly range from 0.38 to 0.75, averaging 0.6; 'Diabetes' instances span 0.3 to 0.9, with an average of 0.65; 'Thalasse' instances fall between 0.5 and 0.88, with an average slightly exceeding 0.6; 'Anemia' instances range from 0.25 to 0.75, averaging 0.5; 'Thromboc' instances are concentrated mainly around 0.78 to 0.8, with an average close to 0.79, yet scattered outliers exist from 0.0 to 0.6 and 0.88 to 1.0; finally, 'Heart Disease' instances span 0.2 to 0.6, with an average of 0.5.
@@ -112,18 +112,18 @@ Based on the Hemoglobin histplot for the entire dataset, it appears that the dis
 Below is the detailed instance distribution of each label
 
 <div style="text-align:center; margin-bottom:20px;">
-    <img src="Image\3.Hemoglobin_plot2.png" alt="Hemoglobin plot 2">
+    <img src="Images\3.Hemoglobin_plot2.png" alt="Hemoglobin plot 2">
 </div>
 
 I will perform the same analysis for other features in the dataset.
 ---
-*Plot of other feature:* [Image](Image)
+*Plot of other feature:* [Images](Images)
 
 ---
 After visualizing each feature, I will generate a correlation heatmap for each label and the features to see which features will affect each label. This will help me evaluate whether my previous assessment is accurate.
 
 <div style="text-align:center; margin-bottom:20px;">
-    <img src="Image\Corr_heatmap.png" alt="Correlation Heatmap">
+    <img src="Images\Corr_heatmap.png" alt="Correlation Heatmap">
 </div>
 
 With the Correlation Heatmap, I can observe that there is a low correlation between the labels themselves, as evidenced by negative correlation scores between each label pair. Additionally, I can discern the impact of features on each disease prediction by examining the correlation scores.
@@ -134,7 +134,7 @@ For instance, when considering the 'Thromboc' disease, features such as 'Glucose
 After completing the analytical phase, I perform preprocessing steps such as label encoding, where each label is assigned an integer value starting from 0 using the replace function. Additionally, I rescale all the features using StandardScaler() to enhance the model's learning ability for prediction on the dataset. These preprocessing steps make the dataset suitable for machine learning algorithms to understand and process. Subsequently, I utilize models from libraries such as Scikit-learn to train, select the best model, and fine-tune it using GridSearchCV for improved predictive performance.
 
 <div style="text-align:center; margin-bottom:20px;">
-    <img src="Image\Trained_models_results.png" alt="Results of the trained models">
+    <img src="Images\Trained_models_results.png" alt="Results of the trained models">
 </div>
 
 From the results, it is evident that the Random Forest model consistently achieves the highest scores in all evaluation metrics, followed by the SVM model. Conversely, the Logistic Regression model consistently produces the lowest scores across all evaluation metrics.
@@ -148,5 +148,5 @@ In disease prediction, prioritizing recall (sensitivity) to maximize the detecti
 Finally, with GridSearchCV and the chosen hyperparameters, I tuned my model to achieve the following results:
 
 <div style="text-align:center; margin-bottom:20px;">
-    <img src="Image\Tuned_model_result.png" alt="Results of the tuned model">
+    <img src="Images\Tuned_model_result.png" alt="Results of the tuned model">
 </div>
